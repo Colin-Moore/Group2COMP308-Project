@@ -48,7 +48,7 @@ app.listen(process.env.PORT || PORT, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true});
 let mongoDB = mongoose.connection;
 
 mongoDB.on("error", console.error.bind(console, "Connection Error:")); //binds mongoDB to console to send error
