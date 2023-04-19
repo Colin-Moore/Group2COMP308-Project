@@ -54,7 +54,7 @@ class PatientDetails extends Component{
           }`
     };
   
-  fetch('http://localhost:4000/graphql', {
+  fetch('https://comp308.herokuapp.com/graphql', {
     method: 'POST',
     body: JSON.stringify(requestBody),
     headers: {
@@ -109,7 +109,7 @@ class PatientDetails extends Component{
           }`
     };
   
-  fetch('http://localhost:4000/graphql', {
+  fetch('https://comp308.herokuapp.com/graphql', {
     method: 'POST',
     body: JSON.stringify(requestBody),
     headers: {
@@ -153,7 +153,7 @@ class PatientDetails extends Component{
       }`
     };
     console.log(requestBody)
-  fetch('http://localhost:4000/graphql', {
+  fetch('https://comp308.herokuapp.com/graphql', {
     method: 'POST',
     body: JSON.stringify(requestBody),
     headers: {
