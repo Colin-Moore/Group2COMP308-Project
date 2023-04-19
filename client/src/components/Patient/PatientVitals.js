@@ -30,46 +30,6 @@ class PatientVitals extends Component {
     this.thal = React.createRef();
   }
   static contextType = AuthContext;
-
-  componentDidMount() {
-    this.fetchPatients();
-  }
-  fetchPatients = () => {
-    this.setState({ isLoading: true });
-    const requestBody = {
-      query: `
-              query {
-           getPatients{
-            username, firstname, lastname
-           }
-          }`
-    };
-  
-    fetch('https://comp308.herokuapp.com/graphql', {
-      method: 'POST',
-      body: JSON.stringify(requestBody),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(res => {
-        if (res.status !== 200 && res.status !== 201) {
-          throw new Error('Failed!');
-        }
-        return res.json();
-      })
-      .then(resData => {
-        console.log(resData)
-        const patients = resData.data.getPatients;
-        this.setState({ patients: patients, isLoading: false });
-        console.log(patients);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
-
   onSubmit = () => {
     const username = this.context.username;
     const trestbps = this.trestbps.current.value;
@@ -117,7 +77,7 @@ class PatientVitals extends Component {
   render(){
   return (
     <div id="app" style={({ height: "100vh" }, { display: "flex" })}>
-    <SideBar style={{ height: "100vh"}} />
+    <SideBar props={this.context} style={{ height: "100vh"}} />
 
     <main className='mx-auto'>
       <div className="vitals">
