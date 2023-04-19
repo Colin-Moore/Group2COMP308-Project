@@ -8,11 +8,11 @@
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "server": "nodemon server.js",
+    "server": "server.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
-
   },
+
   "dependencies": {
     "@tensorflow/tfjs": "^4.2.0",
     "bcryptjs": "^2.4.3",
