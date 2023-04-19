@@ -1,7 +1,79 @@
 .App {
   text-align: center;
+  background-color: rgb(226, 210, 210);
+  
 }
 
+.alert{
+  margin-left: 10px;
+  width: 250px;
+}
+
+.main-content{
+  background-color: rgba(214, 214, 224, 0.651);
+  width:100%;
+  text-align: center;
+  margin:auto;
+}
+
+.p_select{
+  width: 500px
+}
+
+#btn_patient{
+  margin-left: 5px;
+  height: 38px;
+}
+
+.patient_info{
+  background-color: rgb(212, 212, 223);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 1rem 1rem;
+}
+
+.vitals{
+  margin-top: 50px;
+  width:1200px;
+ }
+
+ #btn1{
+  width: 100px;
+ }
+
+ .vitals-grid {
+  border: 2px solid black;
+  margin-top: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+.vitals-grid-child {
+  width: 500px;
+  display: inline-block;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 1rem 1rem;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.gamedisplay{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 800px;
+}
+.motivationdisplay{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 800px;
+}
+.card{
+  text-align: center;
+  margin-top:5px;
+  margin-left: 5px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +83,11 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.userForm{
+  width: 400px;
+
 }
 
 .App-header {
