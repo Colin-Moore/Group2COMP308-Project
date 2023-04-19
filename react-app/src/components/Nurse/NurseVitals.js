@@ -1,7 +1,6 @@
-import { step } from "@tensorflow/tfjs";
 import React, { Component, useTransition } from "react";
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
-import { Navigate } from "react-router-dom";
+import { Col, Row, Container, Card, Form } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 import SideBar from './SideBar';
 import AuthContext from "../../AuthContext";
 
@@ -72,7 +71,6 @@ class NurseVitals extends Component {
 
 
   onSubmit = () => {
-    this.setState({isLoading: true})
     const username = this.username.current.value;
     const cp = this.cp.current.value;
     const trestbps = this.trestbps.current.value;
@@ -88,7 +86,7 @@ class NurseVitals extends Component {
     let requestBody = {
       query: `
       mutation{inputVitals(
-        patientVitalsInput:{
+        nurseVitalsInput:{
           username:"${username}",
           cp:${cp},
           trestbps:${trestbps},
@@ -121,7 +119,8 @@ class NurseVitals extends Component {
     })
     .then(resData => {
       console.log(resData)
-      this.setState({isLoading: false})
+      alert("Patient vitals updated.")
+      this.props.history.push('/nursehome');
     })
     .catch(err => {
       console.log(err);
@@ -184,7 +183,7 @@ class NurseVitals extends Component {
                           Serum Cholestoral in mg/dl
                         </Form.Label>
                         <Form.Control type="number"  name="chol" ref={this.chol}
-                            placeholder="1" />
+                            placeholder="200" />
                       </Form.Group>
 
                       <Form.Group
@@ -203,7 +202,7 @@ class NurseVitals extends Component {
                           Resting Electrocardiographic Results
                         </Form.Label>
                         <Form.Control type="number"  name="restecg" ref={this.restecg}
-                            placeholder="1" />
+                            placeholder="0 - 2" />
                       </Form.Group>
                       </Col>
                       <Col className="vitals-grid-child">
@@ -230,14 +229,14 @@ class NurseVitals extends Component {
                           ST Depression Induced By Exercise
                         </Form.Label>
                         <Form.Control type="number"  name="oldpeak" ref={this.oldpeak}
-                            placeholder="1" />
+                            placeholder="1.5" />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className="text-center">
                           Slope of Peak Exercise ST Segment
                         </Form.Label>
                         <Form.Control type="number"  name="slope" ref={this.slope}
-                            placeholder="1" />
+                            placeholder="0 - 2" />
                       </Form.Group>
                       
                       <Form.Group
@@ -288,5 +287,5 @@ class NurseVitals extends Component {
  );
 }
 }
-export default NurseVitals;
+export default withRouter(NurseVitals);
 
