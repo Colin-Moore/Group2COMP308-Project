@@ -90,21 +90,21 @@ class PatientForm extends Component {
                     First Name
                   </Form.Label>
                   <Form.Control type="text"  name="firstname" ref={this.firstname}
-                      placeholder="12" />
+                      placeholder="First Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="text-center">
                     Last Name
                   </Form.Label>
                   <Form.Control type="text"  name="lastname" ref={this.lastname}
-                      placeholder="12" />
+                      placeholder="Last Name" />
                 </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="text-center">
                     Age
                   </Form.Label>
                   <Form.Control type="number"  name="age" ref={this.age}
-                      placeholder="12" />
+                      placeholder="52" />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
