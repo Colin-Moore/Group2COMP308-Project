@@ -1,7 +1,7 @@
 const Vitals = require('../../models/vitals');
 const Patient = require('../../models/patient');
 const tf = require('@tensorflow/tfjs');
-const heart = require('../../../heart.json');
+const heart = require('../../heart.json');
 
 module.exports = {
     vitals: async () => {
@@ -96,7 +96,7 @@ module.exports = {
             }
         ];
         console.log(input)
-        const epochs = 1000;
+        const epochs = 500;
         const learningRate = 0.01
 
         const trainingData = tf.tensor2d(heart.map(item => [
@@ -161,7 +161,7 @@ module.exports = {
 
         model.compile({
             loss: "meanSquaredError",
-            optimizer: tf.train.adam(.01),
+            optimizer: tf.train.adam(learningRate),
         })
     
         const startTime = Date.now()
