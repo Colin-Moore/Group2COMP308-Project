@@ -44,8 +44,8 @@ app.use('/graphql', cors(), graphqlHTTP({
 
 app.use(cookieParser("secret"));
 
-app.listen(PORT, function() {
-    console.log("Server is running on Port: " + PORT);
+app.listen(process.env.PORT || PORT, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
