@@ -154,11 +154,10 @@ class DailyTips extends Component {
       .then(resData => {
         this.state.motivations.push(resData.data.createMotivation)
         console.log(resData)
-        
+        this.setState({ isLoading: false });
       })
       .catch(err => {
         console.log(err);
-        this.setState({ isLoading: false });
       });
     this.hideTipModal();
   }
@@ -280,7 +279,7 @@ class DailyTips extends Component {
               Close
             </Button>
             <Button variant="primary" onClick={this.saveTip}>
-              Send
+              Save
             </Button>
           </Modal.Footer>
         </Modal>
