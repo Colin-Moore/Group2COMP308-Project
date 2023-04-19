@@ -27,11 +27,6 @@ app.use((req, res, next) => {
 
 const path = require("path");
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
 
 app.use(isAuth);
 
@@ -43,6 +38,11 @@ app.use('/graphql', cors(), graphqlHTTP({
 }))
 
 app.use(cookieParser("secret"));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 
 app.listen(process.env.PORT || PORT, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
