@@ -10,7 +10,7 @@ const graphqlSchema = require('./server/graphql/schema/index');
 const graphqlResolvers = require('./server/graphql/resolvers/index');
 const cors = require('cors');
 const isAuth = require("./auth")
-
+require("dotenv").config()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -46,4 +46,13 @@ mongoDB.on("error", console.error.bind(console, "Connection Error:")); //binds m
 //reports from mongoDB to app console
 mongoDB.once("open", () => {
   console.log("Connected to MongoDB...");
+});
+
+const path = require("path");
+
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./react-app/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./react-app/build", "index.html"));
 });

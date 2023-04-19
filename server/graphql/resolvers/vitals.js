@@ -161,7 +161,7 @@ module.exports = {
 
         model.compile({
             loss: "meanSquaredError",
-            optimizer: tf.train.adam(.01),
+            optimizer: tf.train.adam(learningRate),
         })
     
         const startTime = Date.now()
