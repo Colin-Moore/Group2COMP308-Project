@@ -8,7 +8,7 @@
     "heroku-postbuild": "cd client && npm install && npm run build"
 },
   "engines": {
-    "node": "8.9.2"
+    "node": "18.12.1"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.2.0",
