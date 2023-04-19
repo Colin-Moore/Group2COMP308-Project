@@ -1,0 +1,44 @@
+{
+  "name": "comp308-group2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.2.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.8",
+    "ejs": "^3.0.1",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "express-session": "^1.17.3",
+    "graphql": "^15.8.0",
+    "jsonwebtoken": "^9.0.0",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Colin-Moore/group2comp308-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Colin-Moore/group2comp308-Project/issues"
+  },
+  "homepage": "https://github.com/Colin-Moore/group2comp308-Project#readme"
+}
+
