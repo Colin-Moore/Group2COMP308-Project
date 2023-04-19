@@ -96,7 +96,7 @@ module.exports = {
             }
         ];
         console.log(input)
-        const epochs = 1000;
+        const epochs = 500;
         const learningRate = 0.01
 
         const trainingData = tf.tensor2d(heart.map(item => [
