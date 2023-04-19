@@ -2,7 +2,7 @@ import React, { Component, useTransition } from "react";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import SideBar from './SideBar';
 import AuthContext from "../../AuthContext";
-import Spinner from '../Spinner'
+import {withRouter } from 'react-router-dom';
 
 class PatientVitals extends Component {
   state = {
@@ -71,8 +71,7 @@ class PatientVitals extends Component {
 
 
   onSubmit = () => {
-    this.setState({isLoading: true})
-    const username = this.context.username
+    const username = this.context.username;
     const trestbps = this.trestbps.current.value;
     const fbs = this.fbs.current.value;
     const thalach = this.thalach.current.value;
@@ -107,7 +106,8 @@ class PatientVitals extends Component {
     })
     .then(resData => {
       console.log(resData)
-      this.setState({isLoading: false})
+      alert("Vitals updated.")
+      this.props.history.push('/patienthome');
     })
     .catch(err => {
       console.log(err);
@@ -128,7 +128,7 @@ class PatientVitals extends Component {
             <Card className="shadow">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
-                  <h2 className="fw-bold mb-2 text-uppercase ">Enter Patient Vitals</h2>
+                  <h2 className="fw-bold mb-2 text-uppercase ">Enter Vitals</h2>
                   
                   <div className="vitals-grid">
                     <Form>
@@ -187,5 +187,5 @@ class PatientVitals extends Component {
  );
 }
 }
-export default PatientVitals;
+export default withRouter(PatientVitals);
 
