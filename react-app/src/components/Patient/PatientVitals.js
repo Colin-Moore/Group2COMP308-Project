@@ -2,6 +2,7 @@ import React, { Component, useTransition } from "react";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import SideBar from './SideBar';
 import AuthContext from "../../AuthContext";
+import Spinner from '../Spinner'
 
 class PatientVitals extends Component {
   state = {
@@ -71,7 +72,7 @@ class PatientVitals extends Component {
 
   onSubmit = () => {
     this.setState({isLoading: true})
-    const username = this.username.current.value;
+    const username = this.context.username
     const trestbps = this.trestbps.current.value;
     const fbs = this.fbs.current.value;
     const thalach = this.thalach.current.value;
@@ -79,7 +80,7 @@ class PatientVitals extends Component {
 
     let requestBody = {
       query: `
-      mutation{inputVitals(
+      mutation{inputPatientVitals(
         patientVitalsInput:{
           username:"${username}",
           trestbps:${trestbps},
@@ -133,17 +134,6 @@ class PatientVitals extends Component {
                     <Form>
                       
                       <Col className="vitals-grid-child">
-                    <Form.Group
-                      className="mb-3"
-                      controlId="formBasicSelect">
-                      <Form.Label>Patient:</Form.Label>
-                      <Form.Select aria-label="Default select example" ref={this.username} >
-                        <option>Select Patient</option>
-                        {this.state.patients.map(patient => (
-                          <option value={patient.username}>{patient.lastname}, {patient.firstname}</option> 
-                        ))}
-                      </Form.Select>
-                    </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className="text-center">
                           Resting Blood Pressure

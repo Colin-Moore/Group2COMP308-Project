@@ -102,6 +102,14 @@ input PatientInput{
 }
 
 input PatientVitalsInput{
+  username:String!
+  trestbps:Int!
+  fbs:Int!
+  thalach:Int!
+  exang: Int!
+}
+
+input NurseVitalsInput{
   username: String!
   cp: Int!
   trestbps: Int!
@@ -132,6 +140,8 @@ input VitalsInput {
   thal: Int!
 }
 
+
+
 type RootQuery {
     getPatients: [PatientInfo!]!
     games: [Game!]!
@@ -156,7 +166,8 @@ type RootMutation{
     register(registerInput: RegisterInput!):AuthData!
     trainAndPredict(username: String!): [Float!]!
     inputSymptoms(symptom: String): String
-    inputVitals(patientVitalsInput: PatientVitalsInput!): String
+    inputVitals(nurseVitalsInput: NurseVitalsInput!): String
+    inputPatientVitals(patientVitalsInput: PatientVitalsInput!): String
 }
 
 schema {
