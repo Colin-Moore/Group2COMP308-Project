@@ -24,6 +24,15 @@ app.use((req, res, next) => {
   next();
 });
 
+
+const path = require("path");
+
+app.use(express.static(path.resolve(__dirname, "./react-app/build")));
+
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./react-app/build", "index.html"));
+});
+
 app.use(isAuth);
 
 app.use('*', cors());
@@ -48,11 +57,3 @@ mongoDB.once("open", () => {
   console.log("Connected to MongoDB...");
 });
 
-const path = require("path");
-
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "./react-app/build")));
-// Step 2:
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./react-app/build", "index.html"));
-});
