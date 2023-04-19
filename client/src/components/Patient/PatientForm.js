@@ -1,7 +1,6 @@
 import React, { Component, useTransition } from "react";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
-import  { Router,Navigate, Redirect } from "react-router-dom";
-import SideBar from './SideBar';
+
 import AuthContext from "../../AuthContext";
 import {withRouter } from 'react-router-dom';
 

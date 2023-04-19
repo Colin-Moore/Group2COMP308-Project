@@ -1,7 +1,7 @@
 const Vitals = require('../../models/vitals');
 const Patient = require('../../models/patient');
 const tf = require('@tensorflow/tfjs');
-const heart = require('../../../heart.json');
+const heart = require('../../heart.json');
 
 module.exports = {
     vitals: async () => {

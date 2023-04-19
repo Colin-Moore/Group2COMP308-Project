@@ -1,13 +1,13 @@
 let express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const DB = require('./server/config/db');
+const DB = require('./config/db');
 const PORT = 4000;
 const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql').graphqlHTTP;
 const cookieParser = require('cookie-parser');
-const graphqlSchema = require('./server/graphql/schema/index');
-const graphqlResolvers = require('./server/graphql/resolvers/index');
+const graphqlSchema = require('./graphql/schema/index');
+const graphqlResolvers = require('./graphql/resolvers/index');
 const cors = require('cors');
 const isAuth = require("./auth")
 require("dotenv").config()
@@ -27,10 +27,10 @@ app.use((req, res, next) => {
 
 const path = require("path");
 
-app.use(express.static(path.resolve(__dirname, "./react-app/build")));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./react-app/build", "index.html"));
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
 app.use(isAuth);

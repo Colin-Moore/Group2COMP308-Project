@@ -21,6 +21,7 @@ const SideBar = (props) => {
   const handleShow = () => setShow(true);
 
   function sendAlert(){
+    console.log(props.props)
        const requestBody = {
       query: `
       mutation{createAlert(alertInput:{
