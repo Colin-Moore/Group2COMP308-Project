@@ -26,6 +26,30 @@ module.exports = {
     },
 
     inputVitals: async (args) => {
+        const vitals = await Vitals.findOne({username: args.nurseVitalsInput.username});
+      
+
+        console.log(args.nurseVitalsInput.chol)
+            await Vitals.updateOne({username: args.nurseVitalsInput.username}, {$set:{
+                age: parseInt(vitals.age),
+                sex: parseInt(vitals.sex),
+                cp: parseInt(args.nurseVitalsInput.cp), 
+                trestbps: parseInt(args.nurseVitalsInput.trestbps),
+                chol: parseInt(args.nurseVitalsInput.chol),
+                fbs: parseInt(args.nurseVitalsInput.fbs),
+                restecg: parseInt(args.nurseVitalsInput.restecg),
+                thalach: parseInt(args.nurseVitalsInput.thalach),
+                exang: parseInt(args.nurseVitalsInput.exang) ,
+                oldpeak: parseFloat(args.nurseVitalsInput.oldpeak),
+                slope: parseInt(args.nurseVitalsInput.slope),
+                ca: parseInt(args.nurseVitalsInput.ca),
+                thal: parseInt(args.nurseVitalsInput.thal),
+            }}, {upsert: true});
+
+        return "Submitted";
+    },
+
+    inputPatientVitals: async (args) => {
         const vitals = await Vitals.findOne({username: args.patientVitalsInput.username});
       
 
@@ -33,17 +57,17 @@ module.exports = {
             await Vitals.updateOne({username: args.patientVitalsInput.username}, {$set:{
                 age: parseInt(vitals.age),
                 sex: parseInt(vitals.sex),
-                cp: parseInt(args.patientVitalsInput.cp), 
+                cp: parseInt(vitals.cp), 
                 trestbps: parseInt(args.patientVitalsInput.trestbps),
-                chol: parseInt(args.patientVitalsInput.chol),
+                chol: parseInt(vitals.chol),
                 fbs: parseInt(args.patientVitalsInput.fbs),
-                restecg: parseInt(args.patientVitalsInput.restecg),
+                restecg: parseInt(vitals.restecg),
                 thalach: parseInt(args.patientVitalsInput.thalach),
                 exang: parseInt(args.patientVitalsInput.exang) ,
-                oldpeak: parseFloat(args.patientVitalsInput.oldpeak),
-                slope: parseInt(args.patientVitalsInput.slope),
-                ca: parseInt(args.patientVitalsInput.ca),
-                thal: parseInt(args.patientVitalsInput.thal),
+                oldpeak: parseFloat(vitals.oldpeak),
+                slope: parseInt(vitals.slope),
+                ca: parseInt(vitals.ca),
+                thal: parseInt(vitals.thal),
             }}, {upsert: true});
 
         return "Submitted";
