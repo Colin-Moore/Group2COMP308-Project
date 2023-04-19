@@ -32,10 +32,11 @@
     "mongoose": "^5.0.0",
     "morgan": "^1.9.1",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "nodemon": "^2.0.22"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+   
   },
   "repository": {
     "type": "git",
