@@ -35,9 +35,6 @@
     "passport-local": "^1.0.0",
     "nodemon": "^2.0.22"
   },
-  "devDependencies": {
-   
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Colin-Moore/group2comp308-Project.git"
