@@ -2,7 +2,7 @@ import SideBar from './SideBar';
 import { Component } from 'react';
 import AuthContext from '../../AuthContext';
 import Modal from 'react-bootstrap/Modal';
-import {Button, Form} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import Spinner from '../Spinner';
 
 ///Need to fix loading of tip so it shows the correct message!///
