@@ -11,32 +11,19 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Build Client'){
-            steps{
-                dir('client'){
-                    sh 'npm install'
-                }
+        stage('Test') {
+            steps {
+                sh './scripts/test.sh'
             }
         }
-        stage('Test'){
-            steps{
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh './scripts/test.sh'
-                echo "testing"
-            }
-        }    
-        stage('Deliver') { 
+        stage('Deliver') {
             steps {
-//               sh "chmod +x -R ${env.WORKSPACE}"
-                sh './scripts/test.sh'//                 
-                //input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-//                 sh './scripts/kill.sh' 
-//                     }
-                
+                sh './scripts/deliver.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './scripts/kill.sh'
             }
         }
     }
 }
-
 
 
