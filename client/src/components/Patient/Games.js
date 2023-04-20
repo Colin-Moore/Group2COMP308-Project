@@ -68,7 +68,7 @@ class Games extends Component {
               <div class="card-body">
                 <h5 class="card-title">{game.name}</h5>
                 <p class="card-text">{game.description}</p>
-                <a class="btn btn-primary">Play Game</a>
+                <button class="btn btn-primary">Play Game</button>
               </div>
             </div>
             ))}
