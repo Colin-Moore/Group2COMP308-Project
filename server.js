@@ -11,6 +11,7 @@ const graphqlResolvers = require('./graphql/resolvers/index');
 const cors = require('cors');
 const isAuth = require("./auth")
 require("dotenv").config()
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -24,9 +25,7 @@ app.use((req, res, next) => {
   next();
 });
 
-
 const path = require("path");
-
 
 app.use(isAuth);
 

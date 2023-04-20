@@ -110,10 +110,10 @@ const SideBar = (props) => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => handleClose()}>
-              Close
+              Cancel Alert
             </Button>
             <Button variant="primary" onClick={() => sendAlert()}>
-              Send
+              Send Alert
             </Button>
           </Modal.Footer>
           </Modal>
