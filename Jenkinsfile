@@ -27,11 +27,10 @@ pipeline {
         }    
         stage('Deliver') { 
             steps {
-                dir('client'){
                 sh "chmod +x -R ${env.WORKSPACE}"
-                sh '../../scripts/deliver.sh'
+                sh '../scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-                sh '../../scripts/kill.sh' 
+                sh '../scripts/kill.sh' 
                 }
             }
         }
