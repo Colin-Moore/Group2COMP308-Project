@@ -1,5 +1,4 @@
 import SideBar from './SideBar';
-import { BrowserRouter as Router } from 'react-router-dom';
 import React, { Component } from 'react';
 import AuthContext from '../../AuthContext';
 import Modal from 'react-bootstrap/Modal';
