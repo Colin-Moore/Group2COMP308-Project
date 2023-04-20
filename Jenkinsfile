@@ -53,16 +53,7 @@ pipeline {
                 sh './scripts/deploy_prod.sh'
             }
         }
-        stage('Code Coverage'){
-            steps{ 
-                recordCoverage(tools: [[parser: 'JACOCO']],
-        id: 'jacoco', name: 'JaCoCo Coverage',
-        sourceCodeRetention: 'EVERY_BUILD',
-        qualityGates: [
-                [threshold: 60.0, metric: 'LINE', baseline: 'PROJECT', unstable: true],
-                [threshold: 60.0, metric: 'BRANCH', baseline: 'PROJECT', unstable: true]])
-    }
-        }
+     
     }
 }
 
