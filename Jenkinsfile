@@ -30,9 +30,9 @@ pipeline {
                 echo 'starting deliver stage...'
                 sh './scripts/deliver.sh'
                 dir ('react'){
-                sh './scripts/deliver.sh'
+                sh '../scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './scripts/kill.sh'
+                sh '../scripts/kill.sh'
                 }
                 
             }
