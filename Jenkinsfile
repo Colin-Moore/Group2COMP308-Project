@@ -19,9 +19,22 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                echo 'starting deliver stage...'
                 sh './scripts/deliver.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './scripts/kill.sh'
+            }
+        }
+        stage('Deployment'){
+            steps{
+                sh './scripts/deploy_dev.sh'
+            },
+            steps{
+                sh './scripts/deploy_qat.sh'
+            }
+            steps{
+                sh './scripts/deploy_stage.sh'
+            }
+            steps{
+                sh './scripts/deploy_prod.sh'
             }
         }
     }
