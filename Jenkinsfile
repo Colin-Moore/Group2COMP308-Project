@@ -34,15 +34,7 @@ pipeline {
                 }
         
         }
-        stage('Deliver Client'){
-            steps{
-                   sh 'cd client'
-                sh 'npm start & sleep 1'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                
-                
-            }
-        }
+
         stage('Deployment to Dev'){
             steps{
                 sh './scripts/deploy_dev.sh'
