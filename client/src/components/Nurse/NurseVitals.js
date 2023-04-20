@@ -1,4 +1,4 @@
-import React, { Component, useTransition } from "react";
+import React, { Component } from "react";
 import { Col, Row, Container, Card, Form } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 import SideBar from './SideBar';
@@ -29,7 +29,6 @@ class NurseVitals extends Component {
     this.ca = React.createRef();
     this.thal = React.createRef();
   }
-  static contextType = AuthContext;
 
   componentDidMount() {
     this.fetchPatients();
