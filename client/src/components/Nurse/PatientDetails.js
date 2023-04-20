@@ -1,7 +1,6 @@
 import SideBar from './SideBar';
 import React, { Component } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {  Form } from 'react-bootstrap';
 import Spinner from '../Spinner';
 
 ///fix select box from changing back to "select" when patient has been selected.
