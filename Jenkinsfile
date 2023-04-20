@@ -6,9 +6,16 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
+        stage('Build server') {
             steps {
                 sh 'npm install'
+            }
+        }
+        stage('Build Client'){
+            steps {
+                dir 'client'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
         stage('Test') {
