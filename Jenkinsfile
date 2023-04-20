@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build Client'){
             steps{
-                dir('react-app'){
+                dir('client'){
                     sh 'npm install'
                 }
             }
@@ -27,7 +27,7 @@ pipeline {
         }    
         stage('Deliver') { 
             steps {
-                dir('react-app'){
+                dir('client'){
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh '../scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
