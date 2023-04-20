@@ -23,16 +23,22 @@ pipeline {
                 sh './scripts/deliver.sh'
             }
         }
-        stage('Deployment'){
+        stage('Deployment to Dev'){
             steps{
                 sh './scripts/deploy_dev.sh'
-            },
+            }
+        }
+        stage('Deployment to QAT'){
             steps{
                 sh './scripts/deploy_qat.sh'
             }
+        }
+        stage('Deployment to Staging'){
             steps{
                 sh './scripts/deploy_stage.sh'
             }
+        }
+        stage('Deployment to Production'){
             steps{
                 sh './scripts/deploy_prod.sh'
             }
