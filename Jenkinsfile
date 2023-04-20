@@ -28,7 +28,10 @@ pipeline {
         stage('Deliver') {
             steps {
                 echo 'starting deliver stage...'
-                sh './scripts/deliver.sh'
+                sh 'npm start'
+                dir ('react'){
+                    sh 'npm start'
+                }
             }
         }
         stage('Deployment to Dev'){
