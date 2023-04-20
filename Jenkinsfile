@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build Client'){
             steps {
-                dir 'client'
+                dir ('client')
                 sh 'npm install'
                 sh 'npm run build'
             }
