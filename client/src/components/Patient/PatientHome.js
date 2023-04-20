@@ -5,9 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import {Button} from 'react-bootstrap';
 import Spinner from '../Spinner';
 
-///Need to fix loading of tip so it shows the correct message!///
-
-
 class PatientHome extends Component {
   constructor(){
     super();

@@ -77,21 +77,17 @@ class PatientVitals extends Component {
   return (
     <div id="app" style={({ height: "100vh" }, { display: "flex" })}>
     <SideBar props={this.context} style={{ height: "100vh"}} />
-
     <main className='mx-auto'>
       <div className="vitals">
       <Container>
         <Row className="d-flex justify-content-center align-items-center">
-
             <div className="border border-3 border-primary"></div>
             <Card className="shadow">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
                   <h2 className="fw-bold mb-2 text-uppercase ">Enter Vitals</h2>
-                  
                   <div className="vitals-grid">
                     <Form>
-                      
                       <Col className="vitals-grid-child">
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className="text-center">
@@ -100,7 +96,6 @@ class PatientVitals extends Component {
                         <Form.Control type="number"  name="trestbps" ref={this.trestbps}
                             placeholder="122" />
                       </Form.Group>
-                     
                       <Form.Group
                         className="mb-3"
                         controlId="formBasicSelect">
@@ -132,12 +127,9 @@ class PatientVitals extends Component {
                     </Form>
                     </div>
                     <button className="d-grid btn btn-primary mx-auto mt-5" id="btn1" onClick={this.onSubmit}>Save</button>
-                   
-                  
                 </div>
               </Card.Body>
             </Card>
-      
         </Row>
       </Container>
       </div>
