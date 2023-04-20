@@ -1,3 +1,3 @@
 echo 'building app...'
-npm install
-npm start
+sh 'npm install'
+sh 'npm start'
