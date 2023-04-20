@@ -28,9 +28,9 @@ pipeline {
         stage('Deliver') {
             steps {
                 echo 'starting deliver stage...'
-                sh './scripts/deliver.sh'
+                
                 dir ('react'){
-                sh '../scripts/deliver.sh'
+                sh 'npm start'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh '../scripts/kill.sh'
                 }
