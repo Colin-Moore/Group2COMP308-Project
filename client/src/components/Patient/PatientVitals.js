@@ -1,5 +1,5 @@
-import React, { Component, useTransition } from "react";
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
+import React, { Component } from "react";
+import { Col, Row, Container, Card, Form } from "react-bootstrap";
 import SideBar from './SideBar';
 import AuthContext from "../../AuthContext";
 import {withRouter } from 'react-router-dom';
@@ -29,7 +29,6 @@ class PatientVitals extends Component {
     this.ca = React.createRef();
     this.thal = React.createRef();
   }
-  static contextType = AuthContext;
   onSubmit = () => {
     const username = this.context.username;
     const trestbps = this.trestbps.current.value;
