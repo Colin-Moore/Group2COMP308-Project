@@ -27,7 +27,7 @@ pipeline {
         }    
         stage('Deliver') { 
             steps {
-                ls
+                sh 'ls'
 //                 dir{
 //                     ('/'){
 //                 sh "chmod +x -R ${env.WORKSPACE}"
