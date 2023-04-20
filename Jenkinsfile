@@ -30,10 +30,9 @@ pipeline {
                 echo 'starting deliver stage...'
                 sh 'npm start'
                 dir ('react'){
-                    sh 'npm start & sleep 1'
-                    echo $! > .pidfile
-                    input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                    sh 'kill ($cat .pidfile)
+                sh './jenkins/scripts/deliver.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './jenkins/scripts/kill.sh'
                 }
                 
             }
