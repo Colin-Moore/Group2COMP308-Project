@@ -10,7 +10,6 @@ class PatientForm extends Component {
     isLogin: true
   };
 
-  
   constructor(props) {
     super(props);
     this.history = History;
@@ -115,9 +114,9 @@ class PatientForm extends Component {
                     <option value="0">Female</option>
                   </Form.Select>
                 </Form.Group>
-          </Form>
-          <button className="d-grid btn btn-primary m-3" onClick={this.onSubmit}>Submit</button>
-                    
+                  </Form>
+                  <button className="d-grid btn btn-primary m-3" onClick={this.onSubmit}>Submit</button>
+                            
                   </div>
                 </div>
               </Card.Body>
@@ -126,9 +125,7 @@ class PatientForm extends Component {
         </Row>
       </Container>
     </div>
-
-          
     );
   }
-
-}export default withRouter(PatientForm);
+}
+export default withRouter(PatientForm);
