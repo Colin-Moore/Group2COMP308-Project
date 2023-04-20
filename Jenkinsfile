@@ -27,14 +27,15 @@ pipeline {
         }    
         stage('Deliver') { 
             steps {
-                dir{
-                    ('/'){
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh './scripts/deliver.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-                sh './scripts/kill.sh' 
-                    }
-                }
+                ls
+//                 dir{
+//                     ('/'){
+//                 sh "chmod +x -R ${env.WORKSPACE}"
+//                 sh './scripts/deliver.sh'
+//                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
+//                 sh './scripts/kill.sh' 
+//                     }
+                
             }
         }
     }
