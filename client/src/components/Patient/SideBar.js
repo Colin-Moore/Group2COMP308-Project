@@ -106,7 +106,7 @@ const SideBar = (props) => {
                 placeholder="enter your message here" />
           </Form.Group>
           <p>If you don't enter a message, a default alert message will be sent.</p>
-          <p>Default message: "I need assistance".</p>
+          <p>Default message is: "I need assistance".</p>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => handleClose()}>
