@@ -22,7 +22,7 @@ Your client needs an application to help nurse practitioners to monitor patients
     c. Allow the user to send daily motivational tips to the patient (by storing them in the database and providing a daily tips page for the patient to view, etc.).
     d. Allow the user to generate a list of possible medical conditions, and advise the patient to see a doctor if necessary - intelligent use of symptoms or other data using deep learning and publicly available datasets.
 Emerging Technologies COMP-308
-Group Project Page 2 of 4
+Group Project Page 2 of 4  
   3. If the user is a patient:
     a. Allow the user to create and send an emergency alert to first responders (by storing this in a separate collection)
     b. Allow the user to access fitness games page designed to encourage patients to exercise at home. The Gaming students are encouraged to design/incorporate their own games/interactive pages.
